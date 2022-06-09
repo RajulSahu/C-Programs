@@ -31,7 +31,7 @@ void countingSort(int *nums, int n, int range){
         freq[i] = freq[i]+freq[i-1];
     }
     
-    // Filling th output Array
+    // Filling the output Array
     for(i = n-1; i >= 0; i--){
         output[freq[nums[i]]-1] = nums[i];
         freq[nums[i]]--;
