@@ -4,12 +4,16 @@
 // Insertion sort
 
 void sort(int nums[10], int n){
-    int i, j;
-    for(i = 0; i < n - 1; i++){
-        for (j = i+1; j > 0; j--) {
-            if(nums[j] < nums[j-1]) swap(nums, j, j-1);
-            else break;
+    int i;
+    for(i = 0; i < n; i++){
+        int key = nums[i];
+        int j = i-1;
+        int temp = nums[i];
+        while(j >= 0 && nums[j] > temp){
+            nums[j+1] = nums[j];
+            j--;
         }
+        nums[j+1] = key;
     }
 }
 
